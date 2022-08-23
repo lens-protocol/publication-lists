@@ -1,0 +1,38 @@
+{
+  "$id": "https://github.com/lens-protocol/publication-list/publication-list.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Specification for Creating Lists of Lens Protocol Publications",
+  "type": "object",
+  "properties": {
+    "title" : {
+      "type:": "string"
+    },
+    "author" : {
+      "type:": "string"
+    },
+    "listType" : {
+      "type:": "string",
+      "enum" : ["TODO: Fill In"]
+    },
+    "publications": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pubID"
+      }
+    }
+  },
+  "$defs": {
+    "pubID" : {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/lensHex"
+      }
+    },
+    "lensHex" : {
+      "type": "string",
+      "pattern": "^0x([a-fA-F0-9]{2,})$"
+    }
+  }
+}
