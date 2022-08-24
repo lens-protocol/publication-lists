@@ -23,16 +23,12 @@
   },
   "$defs": {
     "pubID" : {
-      "type": "array",
-      "minItems": 2,
-      "maxItems": 2,
-      "items": {
-        "$ref": "#/$defs/lensHex"
-      }
+      "type": "string",
+      "items": "#/$defs/lensHex"
     },
     "lensHex" : {
       "type": "string",
-      "pattern": "^0x([a-fA-F0-9]{2,})$"
+      "pattern": "^0x([a-fA-F0-9]{2,}-0x[a-fA-F0-0]{2,})$"
     }
   }
 }
